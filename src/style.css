@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Patrick+Hand+SC&family=Poppins:ital,wght@0,400;0,500;0,700;0,800;1,200;1,400;1,500&display=swap");
+
+@layer components {
+  .btn {
+    @apply py-2 px-4 bg-[#182327] text-white  rounded-lg shadow-md hover:bg-[#02b5ea] focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 w-[107px] mt-5 flex items-center justify-center md:mt-0;
+  }
+}
+
