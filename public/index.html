@@ -1,172 +1,249 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="style.css" rel="stylesheet" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
-      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <style>
-      .heros {
-        background: linear-gradient(
-          180deg,
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="style.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    .heros {
+      background: linear-gradient(180deg,
           #02b5ea 0%,
-          rgba(2, 181, 234, 0.15) 100%
-        );
-      }
+          rgba(2, 181, 234, 0.15) 100%);
+    }
 
-    
-        body::-webkit-scrollbar {
-       display: none; /* for Chrome, Safari, and Opera */
-      }
-      
-    </style>
-  </head>
-  <body class="container font-Poppins 2">
-    <!-- Nav bar -->
-    <div class="heros">
-      <nav class="p-5 bg-white shadow md:flex md:items-center gap-24 z-20 ">
-        <div class="flex justify-between items-center md:ml-[135px]">
-          <span class="text-2xl font-[Poppins] cursor-pointer">
-            <img class="h-10 inline" src="images/Logo.svg" />
-          </span>
 
-          <span class="text-3xl cursor-pointer mx-2 md:hidden block">
-            <i class="fa-solid fa-bars" onclick="Menu(this)"></i>
-          </span>
+    body::-webkit-scrollbar {
+      display: none;
+      /* for Chrome, Safari, and Opera */
+    }
+  </style>
+</head>
+
+<body class="container font-Poppins 2">
+  <!-- Nav bar -->
+  <div class="heros">
+    <nav class="p-5 bg-white shadow md:flex md:items-center gap-24 z-20 ">
+      <div class="flex justify-between items-center md:ml-[135px]">
+        <span class="text-2xl font-[Poppins] cursor-pointer">
+          <img class="h-10 inline" src="images/Logo.svg" />
+        </span>
+
+        <span class="text-3xl cursor-pointer mx-2 md:hidden block">
+          <i class="fa-solid fa-bars" onclick="Menu(this)"></i>
+        </span>
+      </div>
+
+      <ul
+        class="md:flex md:items-center z-[1] md:z-auto md:static absolute bg-white w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500 gap-5">
+        <li class="mx-4 my-6 md:my-0">
+          <a href="#" class="text-md hover:text-cyan-500 duration-500">Products</a>
+        </li>
+        <li class="mx-4 my-6 md:my-0">
+          <a href="#" class="text-md hover:text-cyan-500 duration-500">About Us</a>
+        </li>
+        <li class="mx-4 my-6 md:my-0">
+          <a href="#" class="text-md hover:text-cyan-500 duration-500">Videos</a>
+        </li>
+        <li class="mx-4 my-6 md:my-0">
+          <a href="#" class="text-md hover:text-cyan-500 duration-500">Recipes</a>
+        </li>
+        <li class="mx-4 my-6 md:my-0">
+          <a href="#" class="text-md hover:text-cyan-500 duration-500">Where to Buy</a>
+        </li>
+
+        <div class="mx-auto text-gray-600">
+          <input class="border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none"
+            type="search" name="search" placeholder="Search" />
         </div>
+        <div class="button btn md:mx-4">Sign Up</div>
+      </ul>
+    </nav>
 
-        <ul
-          class="md:flex md:items-center z-[1] md:z-auto md:static absolute bg-white w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500 gap-5"
-        >
-          <li class="mx-4 my-6 md:my-0">
-            <a href="#" class="text-md hover:text-cyan-500 duration-500"
-              >Products</a
-            >
-          </li>
-          <li class="mx-4 my-6 md:my-0">
-            <a href="#" class="text-md hover:text-cyan-500 duration-500"
-              >About Us</a
-            >
-          </li>
-          <li class="mx-4 my-6 md:my-0">
-            <a href="#" class="text-md hover:text-cyan-500 duration-500"
-              >Videos</a
-            >
-          </li>
-          <li class="mx-4 my-6 md:my-0">
-            <a href="#" class="text-md hover:text-cyan-500 duration-500"
-              >Recipes</a
-            >
-          </li>
-          <li class="mx-4 my-6 md:my-0">
-            <a href="#" class="text-md hover:text-cyan-500 duration-500"
-              >Where to Buy</a
-            >
-          </li>
+    <!-- Hero Section -->
+    <hero
+      class="md:flex flex md:ml-[134px] md:mr-[134px] md:mt-[50px] md:flex-row z-10 flex-col-reverse justify-center items-center">
+      <div class="md:flex-1 md:p-7 items-start justify-start flex flex-col p-9">
+        <h1 class="font-Sentient md:text-[70px] font-bold text-[#182327] text-[40px] leading-[50px] md:leading-snug">
+          Feel The Best<br />
+          Taste With Lays <br />
+          Crisps
+        </h1>
+        <p class="md:text-[20px] md:mt-[20px] text-[14px] mt-2 ">
+          Feel the best and awesome taste with Lays Crisps. There has
+          <br />been various kind of Crisps you can eat and feel the wonder<br />
+          taste of this awesome product.
+        </p>
 
-          <div class="mx-auto text-gray-600">
-            <input
-              class="border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none"
-              type="search"
-              name="search"
-              placeholder="Search"
-            />
+        <button class="btn mt-6">All Crisps</button>
+      </div>
+      <div class="md:flex md:justify-center md:items-center md:z-0 mt-10">
+        <img src="images/Union.svg" alt="" class="absolute h-[778px] w-[778px] mb-36 hidden" />
+        <img src="images/packet.svg" alt="" class="md:w-[496px] md:h-[597px] md:z-10 h-[300px] w-[300px]" />
+      </div>
+    </hero>
+  </div>
+  </div>
+
+  <!-- Feature Section -->
+  <div class="features md:mt-[150px] mt-[80px] ml-5">
+    <p class="font-Sentient  text-[38px] text-[#182327] font-bold md:ml-[135px] ml-[18px]">We Provide the Tasty and <br>
+      Best Chips for you!</p>
+    <!-- Feature -->
+    <div class="md:flex md:flex-row md:ml-28 md:items-center md:gap-32 flex flex-col ml-5">
+
+      <img src="images/pack2.png" alt="" class="md:w-[570px] md:h-[564px] md:mt-[70px] h-[338px] w-[335px] mt-9">
+      <div>
+        <ul>
+          <li class="font-Sentient text-[22px] font-bold mt-8">LAY'S BLT Flavoured</li>
+          <div class="flex gap-3 mt-[12px]">
+            <img src="images/icons/Star 1.png" alt="">
+            <img src="images/icons/Star 1.png" alt="">
+            <img src="images/icons/Star 1.png" alt="">
+            <img src="images/icons/Star 1.png" alt="">
+            <img src="images/icons/Star 1.png" alt="">
           </div>
-          <div class="button btn md:mx-4">Sign Up</div>
+          <li class="mt-[12px] font-Poppins text-[16px] text-[#5D696D]">Price</li>
+          <li class="mt-[10px] font-bold ">$ 3.93</li>
+          <li class="text-[14px] mt-[18px] text-[#5D696D]">It all starts with farm-grown potatoes, cooked and seasoned
+            to <br> perfection. Then we add the sweet taste of honey and the spicy <br> kick of BBQ sauce. So every
+            LAY'S potato
+            chip is perfectly crispy <br>and delicious. Happiness in Every Bite.</li>
+          <li class="mt-[38px]">
+            <div class="flex gap-4 items-center md:items-center">
+              <button class="btn ">Buy Now</button>
+              <label class="text-[14px] cursor-pointer">See More</label>
+            </div>
+          </li>
         </ul>
-      </nav>
-
-      <!-- Hero Section -->
-      <hero
-        class="md:flex flex md:ml-[134px] md:mr-[134px] md:mt-[50px] md:flex-row z-10 flex-col-reverse justify-center items-center"
-      >
-        <div
-          class="md:flex-1 md:p-7 items-start justify-start flex flex-col p-9"
-        >
-          <h1
-            class="font-Sentient md:text-[70px] font-bold text-[#182327] text-[40px] leading-[50px] md:leading-snug"
-          >
-            Feel The Best<br />
-            Taste With Lays <br />
-            Crisps
-          </h1>
-          <p class="md:text-[20px] md:mt-[20px] text-[14px] mt-2 ">
-            Feel the best and awesome taste with Lays Crisps. There has
-            <br />been various kind of Crisps you can eat and feel the wonder<br />
-            taste of this awesome product.
-          </p>
-
-          <button class="btn mt-6">All Crisps</button>
-        </div>
-        <div class="md:flex md:justify-center md:items-center md:z-0 mt-10">
-          <img
-            src="images/Union.svg"
-            alt=""
-            class="absolute h-[778px] w-[778px] mb-36 hidden"
-          />
-          <img
-            src="images/packet.svg"
-            alt=""
-            class="md:w-[496px] md:h-[597px] md:z-10 h-[300px] w-[300px]"
-          />
-        </div>
-      </hero>
       </div>
     </div>
+  </div>
 
-    <!-- Feature Section -->
-    <div class="features md:mt-[150px] mt-[80px] ml-5">
-        <p class="font-Sentient  text-[38px] text-[#182327] font-bold md:ml-[135px] ml-[18px]">We Provide the Tasty and <br> Best Chips for you!</p>
-        <!-- Feature -->
-        <div class="md:flex md:flex-row md:ml-28 md:items-center md:gap-32 flex flex-col ml-5">
+  <!--Taste -->
+  <div class="taste flex justify-center mt-[80px] flex-col items-center ">
+    <h2 class="text-[42px] font-Sentient font-bold">Find Best Taste Here</h2>
+    <p class="text-[#5D696D] text-center mt-[18px] ">Feel the best and awesome taste with Lays Crisps. There has been
+      <br>various kind of Crisps you can eat and feel
+    </p>
 
-            <img src="images/pack2.png" alt="" class="md:w-[570px] md:h-[564px] md:mt-[70px] h-[338px] w-[335px] mt-9">
-            <div>
-               <ul>
-      <li class="font-Sentient text-[22px] font-bold mt-8">LAY'S BLT Flavoured</li>
-       <div class="flex gap-3 mt-[12px]">
-         <img src="images/icons/Star 1.png" alt="">
-         <img src="images/icons/Star 1.png" alt="">
-         <img src="images/icons/Star 1.png" alt="">
-         <img src="images/icons/Star 1.png" alt="">
-         <img src="images/icons/Star 1.png" alt="">
-       </div>
-       <li class="mt-[12px] font-Poppins text-[16px] text-[#5D696D]">Price</li>
-       <li class="mt-[10px] font-bold ">$ 3.93</li>
-       <li class="text-[14px] mt-[18px] text-[#5D696D]">It all starts with farm-grown potatoes, cooked and seasoned 
-         to <br> perfection. Then we add the sweet taste of honey and the spicy <br> kick of BBQ sauce. So every LAY'S potato
-          chip is perfectly crispy <br>and delicious. Happiness in Every Bite.</li>
-       <li class="mt-[38px]">
-         <div class="flex gap-4 items-center md:items-center">
-         <button class="btn ">Buy Now</button>
-           <label class="text-[14px] cursor-pointer">See More</label>
-         </div>
-       </li>
-     </ul>
-            </div>
+    <div class="md:grid md:grid-cols-3 md:gap-[40px] md:mt-[50px] mt-8 ">
+
+      <div class="w-[370px] h-[480px] bg-white mb-16 cursor-pointer">
+        <img src="images/Packets/p1.png" alt="">
+        <img src="images/icons/Cart.png" alt="" class="absolute ml-72">
+        <div class="mt-2 flex flex-col p-4">
+          <label for="" class="text-black text-[22px]">$ 3.93</label>
+          <label for="" class="text-black text-[16px] text-[#5D696D;]">LAY'S® Yogurt & Herb Flavored</label>
+          <div class="flex gap-3 mt-[12px]">
+            <img src="images/icons/Star 1.png" alt="">
+            <img src="images/icons/Star 1.png" alt="">
+            <img src="images/icons/Star 1.png" alt="">
+            <img src="images/icons/Star 1.png" alt="">
+            <img src="images/icons/Star 1.png" alt="">
+          </div>
         </div>
+      </div>
+
+      <div class="w-[370px] h-[480px] bg-white mb-16 cursor-pointer">
+        <img src="images/Packets/p2.png" alt="">
+        <img src="images/icons/Cart.png" alt="" class="absolute ml-72">
+        <div class="mt-2 flex flex-col p-4">
+          <label for="" class="text-black text-[22px]">$ 3.93</label>
+          <label for="" class="text-black text-[16px] text-[#5D696D;]">LAY'S® Wavy Orginal Flavored</label>
+          <div class="flex gap-3 mt-[12px]">
+            <img src="images/icons/Star 1.png" alt="">
+            <img src="images/icons/Star 1.png" alt="">
+            <img src="images/icons/Star 1.png" alt="">
+            <img src="images/icons/Star 1.png" alt="">
+            <img src="images/icons/Star 1.png" alt="">
+          </div>
+        </div>
+      </div>
+
+      <div class="w-[370px] h-[480px] bg-white  mb-16 cursor-pointer ">
+        <img src="images/Packets/p6.png" alt="">
+        <img src="images/icons/Cart.png" alt="" class="absolute ml-72">
+        <div class="mt-2 flex flex-col p-4">
+          <label for="" class="text-black text-[22px]">$ 3.93</label>
+          <label for="" class="text-black text-[16px] text-[#5D696D;]">LAY'S® Sour Cream & Onion</label>
+          <div class="flex gap-3 mt-[12px]">
+            <img src="images/icons/Star 1.png" alt="">
+            <img src="images/icons/Star 1.png" alt="">
+            <img src="images/icons/Star 1.png" alt="">
+            <img src="images/icons/Star 1.png" alt="">
+            <img src="images/icons/Star 1.png" alt="">
+          </div>
+        </div>
+      </div>
+
+      <div class="w-[370px] h-[480px] bg-white  mb-16 cursor-pointer">
+        <img src="images/Packets/p3.png" alt="">
+        <img src="images/icons/Cart.png" alt="" class="absolute ml-72">
+        <div class="mt-2 flex flex-col p-4">
+          <label for="" class="text-black text-[22px]">$ 3.93</label>
+          <label for="" class="text-black text-[16px] text-[#5D696D;]">LAY'S® Classic Flavored</label>
+          <div class="flex gap-3 mt-[12px]">
+            <img src="images/icons/Star 1.png" alt="">
+            <img src="images/icons/Star 1.png" alt="">
+            <img src="images/icons/Star 1.png" alt="">
+            <img src="images/icons/Star 1.png" alt="">
+            <img src="images/icons/Star 1.png" alt="">
+          </div>
+        </div>
+      </div>
+
+      <div class="w-[370px] h-[480px] bg-white  mb-16 cursor-pointer">
+        <img src="images/Packets/p4.png" alt="">
+        <img src="images/icons/Cart.png" alt="" class="absolute ml-72">
+        <div class="mt-2 flex flex-col p-4">
+          <label for="" class="text-black text-[22px]">$ 3.93</label>
+          <label for="" class="text-black text-[16px] text-[#5D696D;]">LAY'S® Cheddar & Sour Cream</label>
+          <div class="flex gap-3 mt-[12px]">
+            <img src="images/icons/Star 1.png" alt="">
+            <img src="images/icons/Star 1.png" alt="">
+            <img src="images/icons/Star 1.png" alt="">
+            <img src="images/icons/Star 1.png" alt="">
+            <img src="images/icons/Star 1.png" alt="">
+          </div>
+        </div>
+      </div>
+
+      <div class="w-[370px] h-[480px] bg-white  mb-16 cursor-pointer">
+        <img src="images/Packets/p5.png" alt="">
+        <img src="images/icons/Cart.png" alt="" class="absolute ml-72">
+        <div class="mt-2 flex flex-col p-4">
+          <label for="" class="text-black text-[22px]">$ 3.93</label>
+          <label for="" class="text-black text-[16px] text-[#5D696D;]">LAY'S® Salt & Vinegar Flavored</label>
+          <div class="flex gap-3 mt-[12px]">
+            <img src="images/icons/Star 1.png" alt="">
+            <img src="images/icons/Star 1.png" alt="">
+            <img src="images/icons/Star 1.png" alt="">
+            <img src="images/icons/Star 1.png" alt="">
+            <img src="images/icons/Star 1.png" alt="">
+          </div>
+        </div>
+      </div>
+
     </div>
+  </div>
 
-    <!--  -->
+  <script>
+    function Menu(e) {
+      let list = document.querySelector("ul");
+      e.name === "menu"
+        ? ((e.name = "close"),
+          list.classList.add("top-[80px]"),
+          list.classList.add("opacity-100"))
+        : ((e.name = "menu"),
+          list.classList.remove("top-[80px]"),
+          list.classList.remove("opacity-100"));
+    }
+  </script>
 
-      <script>
-        function Menu(e) {
-          let list = document.querySelector("ul");
-          e.name === "menu"
-            ? ((e.name = "close"),
-              list.classList.add("top-[80px]"),
-              list.classList.add("opacity-100"))
-            : ((e.name = "menu"),
-              list.classList.remove("top-[80px]"),
-              list.classList.remove("opacity-100"));
-        }
-      </script>
-    
-  </body>
+</body>
+
 </html>
